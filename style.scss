@@ -32,7 +32,7 @@ html {
 .header {
   z-index: 1;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background-image: linear-gradient(
     to bottom,
     $primary-color,
@@ -42,16 +42,17 @@ html {
   position: relative;
   overflow: hidden;
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-start;
-  padding: 2.5rem 10rem;
-  justify-content: center;
+  padding: 2.5rem 0;
+  row-gap: 3rem;
 
   .header-logo {
     display: flex;
-    width: 46rem;
+    padding-left: 10rem;
+    width: 30%;
     justify-content: space-between;
     align-items: center;
-    margin-right: auto;
 
     img {
       object-fit: cover;
@@ -68,8 +69,9 @@ html {
   }
 
   .header-navs {
-    width: -webkit-fill-available;
-    padding-left: 4rem;
+    width: 65%;
+    margin-left: auto;
+    padding-right: 10rem;
 
     .header-main-nav {
       display: flex;
@@ -112,7 +114,7 @@ html {
 
     .header-sub-nav {
       display: flex;
-      width: 75%;
+      width: -webkit-fill-available;
       margin-left: auto;
       height: 6rem;
       border-radius: 7rem;
@@ -372,14 +374,10 @@ html {
   }
 
   .header-slider {
-    position: absolute;
-    top: 20rem;
-    left: 50%;
     height: 45rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: translateX(-50%);
 
     &-item {
       height: 100%;
@@ -452,7 +450,7 @@ html {
   }
 
   .header-quote {
-    position: absolute;
+    // position: absolute;
     top: 73rem;
     width: 100%;
     height: 20rem;
@@ -1160,7 +1158,7 @@ html {
 
 @media (max-width: 1399.98px) {
   .header {
-    padding: 2.5rem;
+    padding: 2.5rem 0;
   }
 }
 
