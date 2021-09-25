@@ -30,7 +30,7 @@ html {
 
 /* Header */
 .header {
-  z-index: 1;
+  z-index: 101;
   width: 100%;
   min-height: 100vh;
   background-image: linear-gradient(
@@ -453,7 +453,6 @@ html {
     // position: absolute;
     top: 73rem;
     width: 100%;
-    height: 20rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -508,7 +507,7 @@ html {
 
 .section-news {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   padding: 4rem;
   background-image: linear-gradient(
     to bottom,
@@ -519,6 +518,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 
   &::before {
     content: "";
@@ -534,10 +534,8 @@ html {
   }
 
   .heading-text {
-    position: absolute;
-    top: 4rem;
-    left: 50%;
-    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
     font-size: 4rem;
     color: $primary-color;
     letter-spacing: 0.5rem;
@@ -552,6 +550,7 @@ html {
     right: 0;
     height: 120%;
     bottom: 0;
+    z-index: 100;
     img {
       &:nth-child(1) {
         animation: swing 5s ease-in-out 0s infinite alternate-reverse;
@@ -586,17 +585,20 @@ html {
   .news-container {
     width: 60%;
     height: -webkit-fill-available;
-    margin-top: 10rem;
+    margin-top: 3rem;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 
     .news-wrapper {
       .news-item {
         display: flex;
         justify-content: space-between;
         margin-bottom: 2rem;
-        height: 17rem;
         .item-image {
-          margin-right: 6rem;
+          margin-right: 3rem;
           img {
             width: 17rem;
             border-radius: 1rem;
@@ -623,6 +625,7 @@ html {
           }
 
           p {
+            text-align: justify;
             margin-top: 1rem;
             font-size: 1.6rem;
             font-weight: 400;
@@ -636,8 +639,6 @@ html {
     }
 
     .read-more-btn {
-      width: 100%;
-      margin-left: 23rem;
       font-size: 2rem;
       font-weight: 500;
       color: #3a808d;
@@ -1164,16 +1165,18 @@ html {
 
 @media (max-width: 1199.98px) {
   .header {
+    .header-logo {
+      padding-left: 5rem;
+    }
     .header-navs {
       position: fixed;
-      width: 40rem;
+      width: 50rem;
       background-color: brown;
       z-index: 9999;
-      right: -40rem;
-      // right: 0;
+      right: -50rem;
       top: 0;
       height: 100vh;
-      padding: 10rem 1rem;
+      padding: 10rem 4rem;
       transition: all 0.5s;
 
       &.open {
@@ -1326,4 +1329,74 @@ html {
       }
     }
   }
+  .section-news {
+    .news-container {
+      width: 100%;
+    }
+
+    .news-side-bar {
+      width: 100%;
+      flex-direction: row;
+      margin-top: 2rem;
+      margin-left: 0;
+      div {
+        width: 45%;
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media (max-width: 991.98px) {
+  .section-news .news-container .news-wrapper .news-item {
+    display: inline-block;
+    .item-image {
+      width: 45%;
+      float: left;
+      img {
+        width: 100%;
+      }
+    }
+    .news-content {
+      display: contents;
+      width: 50%;
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .header {
+    .header-slider-item {
+      width: 100vw;
+      .item-container {
+        img {
+          width: 100%;
+          max-width: unset;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  .header .header-logo {
+    padding-left: 1.5rem;
+  }
+  .header .header-navs .menu-btn {
+    left: -6.5rem;
+  }
+  .header .header-navs {
+    width: 100vw;
+    right: -100%;
+  }
+
+  .section-news .news-side-bar {
+    display: none;
+  }
+}
+
+// Custom Tyni slider
+
+.tns-ovh {
+  overflow: unset !important;
 }
