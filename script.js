@@ -1,3 +1,5 @@
+console.log("Running script!");
+
 import { tns } from "./node_modules/tiny-slider/src/tiny-slider.js";
 
 var slider = tns({
