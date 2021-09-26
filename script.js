@@ -2,20 +2,20 @@ console.log("Running script!");
 
 // import { tns } from "https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/min/tiny-slider.js";
 
-// var sliderHeader = tns({
-//   container: ".header-slider",
-//   autoWidth: true,
-//   mouseDrag: true,
-//   swipeAngle: false,
-//   speed: 400,
-//   loop: true,
-//   lazyload: true,
-//   slideBy: 2.6,
-//   autoplay: true,
-//   center: true,
-//   controls: false,
-//   autoplayButtonOutput: false,
-// });
+var sliderHeader = tns({
+  container: ".header-slider",
+  autoWidth: true,
+  mouseDrag: true,
+  swipeAngle: false,
+  speed: 400,
+  loop: true,
+  lazyload: true,
+  slideBy: 2.6,
+  autoplay: true,
+  center: true,
+  controls: false,
+  autoplayButtonOutput: false,
+});
 
 // var sliderHeader = tns({
 //   container: ".section-poems ul",
@@ -62,4 +62,12 @@ menuBtn.addEventListener("click", () => {
   if (headerNavsContainer) {
     headerNavsContainer.classList.toggle("open");
   }
+});
+
+document.querySelectorAll(".chevron-multi").forEach((button) => {
+  button.addEventListener("click", () => {
+    let parent = button.parentNode?.parentNode;
+
+    parent && parent.classList.toggle("close");
+  });
 });
