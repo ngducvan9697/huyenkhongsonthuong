@@ -765,11 +765,11 @@ html {
 
   ul {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
 
     li {
-      &:not(:first-child) {
-        margin-left: 10rem;
+      &:not(:nth-child(2)) {
+        margin-top: 3rem;
       }
       width: 20%;
 
@@ -803,8 +803,8 @@ html {
         p {
           text-align: center;
           font-weight: lighter;
-          font-size: 2.5rem;
-          line-height: 3.5rem;
+          font-size: 1.5rem;
+          line-height: 2.5rem;
           word-spacing: 0.5rem;
         }
 
@@ -850,7 +850,7 @@ html {
 
     .main-gallery {
       position: relative;
-      width: 70%;
+      width: 60%;
       height: max-content;
       aspect-ratio: 2/1;
 
@@ -883,7 +883,7 @@ html {
       }
       .gallery-info {
         position: absolute;
-        height: 20%;
+        height: max-content;
         bottom: 0;
         padding: 2rem 4rem;
 
@@ -907,7 +907,7 @@ html {
 
   ul {
     margin-top: 3rem;
-    width: 70%;
+    width: 60%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1155,11 +1155,28 @@ html {
       }
     }
   }
+
+  .section-gallerys {
+    a .main-gallery,
+    ul {
+      width: 70%;
+    }
+  }
 }
 
 @media (max-width: 1399.98px) {
   .header {
     padding: 2.5rem 0;
+  }
+  .section-poems ul li {
+    width: 25%;
+  }
+
+  .section-gallerys {
+    a .main-gallery,
+    ul {
+      width: 80%;
+    }
   }
 }
 
@@ -1345,6 +1362,17 @@ html {
       }
     }
   }
+
+  .section-gallerys {
+    a .main-gallery,
+    ul {
+      width: 95%;
+    }
+
+    a .main-gallery {
+      height: -webkit-fill-available;
+    }
+  }
 }
 
 @media (max-width: 991.98px) {
@@ -1392,6 +1420,13 @@ html {
 
   .section-news .news-side-bar {
     display: none;
+  }
+
+  .section-poems ul li {
+    width: 100%;
+    &:not(:nth-child(2)) {
+      display: none;
+    }
   }
 }
 

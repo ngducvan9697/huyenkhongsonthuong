@@ -646,13 +646,13 @@ html {
 }
 .section-poems ul {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 .section-poems ul li {
   width: 20%;
 }
-.section-poems ul li:not(:first-child) {
-  margin-left: 10rem;
+.section-poems ul li:not(:nth-child(2)) {
+  margin-top: 3rem;
 }
 .section-poems ul li article {
   display: flex;
@@ -682,8 +682,8 @@ html {
 .section-poems ul li article p {
   text-align: center;
   font-weight: lighter;
-  font-size: 2.5rem;
-  line-height: 3.5rem;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
   word-spacing: 0.5rem;
 }
 .section-poems ul li article a {
@@ -722,7 +722,7 @@ html {
 }
 .section-gallerys a .main-gallery {
   position: relative;
-  width: 70%;
+  width: 60%;
   height: max-content;
   aspect-ratio: 2/1;
 }
@@ -748,7 +748,7 @@ html {
 }
 .section-gallerys a .main-gallery .gallery-info {
   position: absolute;
-  height: 20%;
+  height: max-content;
   bottom: 0;
   padding: 2rem 4rem;
 }
@@ -767,7 +767,7 @@ html {
 }
 .section-gallerys ul {
   margin-top: 3rem;
-  width: 70%;
+  width: 60%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -983,10 +983,24 @@ html {
   .header .header-navs .header-sub-nav {
     width: -webkit-fill-available;
   }
+
+  .section-gallerys a .main-gallery,
+.section-gallerys ul {
+    width: 70%;
+  }
 }
 @media (max-width: 1399.98px) {
   .header {
     padding: 2.5rem 0;
+  }
+
+  .section-poems ul li {
+    width: 25%;
+  }
+
+  .section-gallerys a .main-gallery,
+.section-gallerys ul {
+    width: 80%;
   }
 }
 @media (max-width: 1199.98px) {
@@ -1142,6 +1156,14 @@ html {
     width: 45%;
     text-align: center;
   }
+
+  .section-gallerys a .main-gallery,
+.section-gallerys ul {
+    width: 95%;
+  }
+  .section-gallerys a .main-gallery {
+    height: -webkit-fill-available;
+  }
 }
 @media (max-width: 991.98px) {
   .section-news .news-container .news-wrapper .news-item {
@@ -1183,6 +1205,13 @@ html {
   }
 
   .section-news .news-side-bar {
+    display: none;
+  }
+
+  .section-poems ul li {
+    width: 100%;
+  }
+  .section-poems ul li:not(:nth-child(2)) {
     display: none;
   }
 }
